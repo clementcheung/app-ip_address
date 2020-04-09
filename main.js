@@ -22,9 +22,6 @@ const path = require('path');
  * to unequivocally locate the file module.
  */
 
-const obj = require(path.join(__dirname, 'ipv6.js'));
-console.log(obj);
-
 const { getIpv4MappedIpv6Address } = require(path.join(__dirname, 'ipv6.js'));
 
 
@@ -39,7 +36,7 @@ const { getIpv4MappedIpv6Address } = require(path.join(__dirname, 'ipv6.js'));
 function getFirstIpAddress(cidrStr, callback) {
 
   // Initialize return arguments for callback
-  let firstIpAddress = null;
+  let firstIpAddress = { ipv4: null, ipv6: null };
   let callbackError = null;
   let firstIpv4Address = null;
   let firstIpv6Address = null;
